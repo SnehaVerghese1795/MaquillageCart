@@ -18,7 +18,16 @@ public class Friend extends BaseDomain {
 	private String friendid;
 	private String status;
 	private char is_online;
+	
 		
+	public Friend(String id, String userid, String friendid, String status, char is_online) {
+		super();
+		this.id = id;
+		this.userid = userid;
+		this.friendid = friendid;
+		this.status = status;
+		this.is_online = is_online;
+	}
 	public String getId() {
 		return id;
 	}

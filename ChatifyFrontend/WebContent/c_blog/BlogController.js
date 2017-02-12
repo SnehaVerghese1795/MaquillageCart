@@ -15,7 +15,7 @@ app
 							var self = this;
 							self.Blog = {
 								userid : '',
-								id : '',
+							//	id : '',
 								title: '',
 								description: '',
 								status : '',

@@ -4,7 +4,7 @@ app.factory('UserService', ['$http', '$q','$rootScope', function($http, $q,$root
 	
 	console.log("UserService...")
 	
-	var BASE_URL='http://localhost:9080/colabBackend'
+	var BASE_URL='http://localhost:9081/ChatifyBackend'
 		
     return {
          

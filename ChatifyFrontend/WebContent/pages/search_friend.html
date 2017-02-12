@@ -2,7 +2,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>searching friend</title>
+<title>Search for a friend</title>
+<style>
+p
+{
+    font-family: 'Palatino Linotype'!important;
+    font-size:15px;
+    }
+</style>
 </head>
 <body>
 <div class="container" ng-controller="FriendController as ctrl">
@@ -33,7 +40,7 @@
 
 			<p>ID: {{Userdetails.userid}} &nbsp; &nbsp;&nbsp; Name: {{Userdetails.username}}
 			    &nbsp; &nbsp;&nbsp;  <button type="button"  ng-click="ctrl.sendFriendRequest(Userdetails.userid)" 
-			       class="btn btn-warning btn-sm">Send Friend Request</button>
+			       class="btn md-raised btn-sm">Send Friend Request</button>
 			  </p>
 
 			<p>Email: {{Userdetails.email}} &nbsp; &nbsp;&nbsp; Mobile:{{Userdetails.contact}}</p>

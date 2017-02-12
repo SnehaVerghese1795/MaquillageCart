@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
 <head>
-<meta charset="utf-8">
+
+   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-cookies.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.1/sockjs.js"></script>
-<title>Header</title>
+  
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-cookies.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.1/sockjs.js"></script>
+<title>Chatify</title>
 </head>
 <style>
-@import url(//fonts.googleapis.com/css?family=Roboto:500,700);
-
-<style>
-  /* Remove the navbar's default margin-bottom and rounded borders */
+ /* Remove the navbar's default margin-bottom and rounded borders */
     .navbar {
       margin-bottom:10;
       border-radius:40;
       background: transperant !important;
      
     }
-    
+    body
+{
+background-image:url(http://cliparts.co/cliparts/rin/rpp/rinrpp4BT.jpg);
+background-size:150%;
+background-repeat: no-repeat;
+
+}
     
     </style>
     <script>
@@ -43,44 +48,43 @@
 						});
 			});
     </script>
-</head>
 <body>
+<header role="banner">
+  <img id="logo-main"  src="https://www.freelogoservices.com/api/main/ph/zjHl2lgef9cYrQL0JFa7kzbw2vuCrh9JmR7P0Dd9OXdE9g5shnN1i...Bv9ettdV9dsBUGw0pY
+  " width="290" alt="Logo Thing main logo">
+</header>
 <nav class="navbar navbar">
   <div class="container-fluid">
     <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+   
      
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-      <li class="active"><a style="font-family:Palatino Linotype;  color:brown;" href="home"><span class="fa fa-home">Home</span></a>
+      <li class="active"><a style="font-family:Palatino Linotype;  color:black;" href="home"><span class="fa fa-home">Home</span></a>
       <li class="dropdown">
-       <a class="dropdown-toggle"  style="font-family:Palatino Linotype;  color:brown;"data-toggle="dropdown"  href="#/Blog">Friend<span class="caret"></span></a>
+       <a class="dropdown-toggle"  style="font-family:Palatino Linotype;  color:black;"data-toggle="dropdown"  href="#/Blog">Friend<span class="caret"></span></a>
       <ul class="dropdown-menu">
         <li><a href="#/viewfriend">View Friend</a></li>
        <li><a href="#/search_friend">Search Friend</a></li>
       </ul>
     </li>
 	<li class="dropdown">
-       <a class="dropdown-toggle"  style="font-family:Palatino Linotype;  color:brown;"data-toggle="dropdown"  href="#">Blog<span class="caret"></span></a>
+       <a class="dropdown-toggle"  style="font-family:Palatino Linotype;  color:black;"data-toggle="dropdown"  href="#">Blog<span class="caret"></span></a>
       <ul class="dropdown-menu">
         <li><a href="#/list_blog">List Blog</a></li>
        <li><a href="#/create_blog">Create Blog</a></li>
       </ul>
     </li>
     <li class="dropdown">
-       <a class="dropdown-toggle"  style="font-family:Palatino Linotype;  color:brown;"data-toggle="dropdown"  href="#/Blog">Job<span class="caret"></span></a>
+       <a class="dropdown-toggle"  style="font-family:Palatino Linotype;  color:black;"data-toggle="dropdown"  href="#/Blog">Job<span class="caret"></span></a>
       <ul class="dropdown-menu">
         <li><a href="#">View Job</a></li>
        <li><a href="#">Search Job</a>        </li>
       </ul>
     </li>
     <li class="dropdown">
-       <a class="dropdown-toggle"  style="font-family:Palatino Linotype;  color:brown;"data-toggle="dropdown"  href="#">Chat<span class="caret"></span></a>
+       <a class="dropdown-toggle"  style="font-family:Palatino Linotype;  color:black;"data-toggle="dropdown"  href="#">Chat<span class="caret"></span></a>
       <ul class="dropdown-menu">
         <li><a href="#/chat">Lets Chat</a></li>
       
@@ -89,13 +93,19 @@
      </ul>
     <ul class="nav navbar-nav navbar-right">
 	
-		<li><a  style="font-family:Palatino Linotype;  color:brown;" href="#/login"><span class="glyphicon glyphicon-log-in" ></span> Login</a></li>
+		<li><a  style="font-family:Palatino Linotype;  color:black;" href="#/login"><span class="glyphicon glyphicon-log-in" ></span> Login</a></li>
 		
 	
 	</ul>
     </div>
   </div>
 </nav>
+   
+   
+   
+    <div ng-view></div>
+
+   
 </body>
 <script src="app.js"></script>
 
