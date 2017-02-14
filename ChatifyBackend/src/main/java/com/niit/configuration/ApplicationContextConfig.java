@@ -21,6 +21,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import com.niit.model.Blog;
 import com.niit.model.Friend;
+import com.niit.model.Job;
 import com.niit.model.Userdetails;
 
 
@@ -59,6 +60,7 @@ public class ApplicationContextConfig {
 	    sessionBuilder.addAnnotatedClasses(Userdetails.class);
 	    sessionBuilder.addAnnotatedClasses(Blog.class);
 	    sessionBuilder.addAnnotatedClasses(Friend.class);
+	    sessionBuilder.addAnnotatedClasses(Job.class);
 	    return sessionBuilder.buildSessionFactory();
 	}
 	@Autowired(required=true)

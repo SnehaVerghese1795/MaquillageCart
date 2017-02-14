@@ -20,6 +20,14 @@ app.config(function($routeProvider) {
     templateUrl : 'c_blog/create_blog.html',
     controller  : 'BlogController'
   })
+  .when('/post_job', {
+    templateUrl : 'c_job/post_job.html',
+    controller  : 'JobController'
+  })
+  .when('/search_job', {
+    templateUrl : 'c_job/search_job.html',
+    controller  : 'JobController'
+  })
 
   .when('/about', {
     templateUrl : 'pages/about.html',
