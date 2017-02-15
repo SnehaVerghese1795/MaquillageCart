@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="myApp" ng-controller="UserController as ctrl">
 <head>
 
    <meta charset="utf-8">
@@ -93,7 +93,7 @@ background-repeat: no-repeat;
      </ul>
     <ul class="nav navbar-nav navbar-right">
 	
-		<li><a  style="font-family:Palatino Linotype;  color:black;" href="#/login"><span class="glyphicon glyphicon-log-in" ></span> Login</a></li>
+		<li><a  style="font-family:Palatino Linotype;  color:black;" href="#" ng-click="ctrl.logout()"><span class="glyphicon glyphicon-log-in" ></span> Logout</a></li>
 		
 	
 	</ul>

@@ -131,10 +131,12 @@ app
 							};
 
 							self.logout = function() {
-								console.log("logout")
+								console.log("logout in controller_user............")
+								
 								$rootScope.currentUser = {};
 								$cookieStore.remove('currentUser');
-								UserService.logout()
+								UserService.logout();
+								
 								$location.path('/');
 
 							}

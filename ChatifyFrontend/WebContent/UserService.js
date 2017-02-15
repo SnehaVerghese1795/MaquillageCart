@@ -66,8 +66,8 @@ app.factory('UserService', ['$http', '$q','$rootScope', function($http, $q,$root
              
               
             logout: function(){
-            	console.log('logout....')
-                return $http.get(BASE_URL+'/user/logout')
+            	console.log("logout in userService............")
+                return $http.get(BASE_URL+'/user/logout/')
                         .then(
                                 function(response){
                                     return response.data;
