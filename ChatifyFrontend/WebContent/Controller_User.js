@@ -21,7 +21,7 @@ app
 								address : '',
 								email : '',
 								is_online : '',
-								Role : '',
+								role : '',
 								errorcode : '',
 								errormessage : ''
 							};
