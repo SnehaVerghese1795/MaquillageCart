@@ -45,6 +45,10 @@ app.config(function($routeProvider) {
     templateUrl : 'pages/search_friend.html',
     controller  : 'FriendController'
   })
+  .when('/view_friend', {
+    templateUrl : 'pages/view_friend.html',
+    controller  : 'FriendController'
+  })
 
 
   .otherwise({redirectTo: '/'});
