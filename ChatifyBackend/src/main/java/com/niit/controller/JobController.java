@@ -36,7 +36,7 @@ public class JobController {
 	public ResponseEntity<?> postJob(@RequestBody Job job,HttpSession session){
 		Userdetails user=(Userdetails)session.getAttribute("user");
 		if(user==null){
-			Error error=new Error("Unauthorized user.. login using valid credentials");
+			Error error=new Error("Unauthorized user.. Login using valid credentials");
 			return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);//401
 		}
 		else{
@@ -51,8 +51,8 @@ public class JobController {
 	public ResponseEntity<?> getAllJobs(HttpSession session){
     	Userdetails user=(Userdetails)session.getAttribute("user");
     	if(user==null){
-    		System.out.println("USER is null");
-    		Error error=new Error("Unauthorized user.. login using valid credentials");
+    		System.out.println("No values found");
+    		Error error=new Error("Unauthorized user.. Login using valid credentials");
 			return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);//401
     	}
     	System.out.println("USER OBJECT " + user.getRole());
@@ -66,8 +66,8 @@ public class JobController {
     		HttpSession session){
     	Userdetails user=(Userdetails)session.getAttribute("user");
     	if(user==null){
-    		System.out.println("USER is null");
-    		Error error=new Error("Unauthorized user.. login using valid credentials");
+    		System.out.println("No values found");
+    		Error error=new Error("Unauthorized user.. Login using valid credentials");
 			return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);//401
     	}
     	logger.debug("JobId "+ jobId);

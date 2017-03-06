@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Register Page</title>
+<title>Registeration Page</title>
 </head>
 <style>
 body { 
@@ -53,7 +53,7 @@ background:none;
 					<form ng-submit="ctrl.submit()" name="myForm"
 						class="form-horizontal">
 
-						<label>Register As..</label>
+						<label>Register Yourself As..</label>
 						<div class="container">
 							<div class="radio">
 								<label class="radio-inline"> <input type="radio" id="Role"
@@ -101,7 +101,8 @@ background:none;
 								<div class="col-md-7">
 									<input type="password" ng-model="ctrl.Userdetails.password"
 										id="password" class="username form-control input-sm"
-										placeholder="password" required ng-minlength="3" />
+										placeholder="password" pattern=".{6,8}" title="password should contain 6 to 8 characters" 
+										required />
 								</div>
 							</div>
 						</div>
@@ -112,8 +113,8 @@ background:none;
 								<label class="col-md-2 control-lable" for="email">Email</label>
 								<div class="col-md-7">
 									<input type="email" ng-model="ctrl.Userdetails.email" id="email"
-										class="email form-control input-sm"
-										placeholder="abc@gmai.com" required />
+										class="email form-control input-sm" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required="true"
+										placeholder="abc@gmai.com"  />
 
 								</div>
 							</div>

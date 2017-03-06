@@ -16,7 +16,7 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
   public void configureMessageBroker(MessageBrokerRegistry config) {
     config.enableSimpleBroker("/topic", "/queue");
     config.setApplicationDestinationPrefixes("/app");
-    System.out.println("inside websocket");
+    System.out.println("entered websocket");
   }
 
 

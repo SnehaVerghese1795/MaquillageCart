@@ -1,3 +1,5 @@
+//dispatcher servlet.xml
+
 package com.niit.configuration;
 
 import org.slf4j.Logger;
@@ -13,10 +15,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
-//similar to dispatcher servlet.xml
+
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.niit.colabBackend")
+@ComponentScan(basePackages = "com.niit.ChatifyBackend")
 public class AppConfig extends WebMvcConfigurerAdapter {
 	private static final Logger logger = 
 			LoggerFactory.getLogger(AppConfig.class);

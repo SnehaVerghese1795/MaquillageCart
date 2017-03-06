@@ -1,9 +1,5 @@
 package com.niit.model;
 
-
-
-
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -55,24 +51,9 @@ private String userid;
 		this.address = address;
 	}
 
-
-	/* @OneToOne
-	    @JoinColumn(name = "cartId")
-	    @JsonIgnore
-	    private Cart cart;*/
 	public String getUserid() {
 		return userid;
 	}
-
-	/*public Cart getCart() {
-		return cart;
-	}
-
-
-	public void setCart(Cart cart) {
-		this.cart = cart;
-	}*/
-
 
 	public void setUserid(String userid) {
 		this.userid = userid;

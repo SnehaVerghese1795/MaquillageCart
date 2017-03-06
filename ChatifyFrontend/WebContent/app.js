@@ -8,30 +8,29 @@ app.config(function($routeProvider) {
     controller  : 'HomeController'
   })
 .when('/chat', {
-    templateUrl : 'c_chat/chat.html',
+    templateUrl : 'chat/chat.html',
     controller  : 'ChatController'
   })
  
   .when('/list_blog', {
-    templateUrl : 'c_blog/list_blog.html',
+    templateUrl : 'blog/list_blog.html',
+    controller  : 'BlogController'
+  })
+  .when('/view_blog', {
+    templateUrl : 'blog/view_blog.html',
     controller  : 'BlogController'
   })
   .when('/create_blog', {
-    templateUrl : 'c_blog/create_blog.html',
+    templateUrl : 'blog/create_blog.html',
     controller  : 'BlogController'
   })
   .when('/post_job', {
-    templateUrl : 'c_job/post_job.html',
+    templateUrl : 'job/post_job.html',
     controller  : 'JobController'
   })
   .when('/search_job', {
-    templateUrl : 'c_job/search_job.html',
+    templateUrl : 'job/search_job.html',
     controller  : 'JobController'
-  })
-
-  .when('/about', {
-    templateUrl : 'pages/about.html',
-    controller  : 'AboutController'
   })
   .when('/login', {
     templateUrl : 'pages/login.html',
@@ -58,7 +57,7 @@ app.run(function ($rootScope, $location, $cookieStore, $http){
 
 	$rootScope.$on('$locationChangeStart', function(event, next, current){
 	console.log("$locationChangeStart")
-	//redirect to login page if not logged in and typing to access a restricted page
+	
 
 	var restrictedPage=$.inArray($location.path(), ['/login','/register']) ===-1;
 	console.log("restrictedPage:" +restrictedPage)
@@ -66,7 +65,7 @@ app.run(function ($rootScope, $location, $cookieStore, $http){
 	console.log("loggedIn:"+loggedIn)
 	if(restrictedPage & !loggedIn){
 	console.log("Navigating to login page:")
-	alert("You are not logged and so you can't do this operation")
+	alert("You are not logged in")
 	$location.path('/login');
 	}
 	});

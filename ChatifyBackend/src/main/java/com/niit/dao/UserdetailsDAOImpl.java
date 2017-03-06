@@ -30,7 +30,7 @@ public class UserdetailsDAOImpl implements UserdetailsDAO {
 	public boolean save(Userdetails userdetails)
 	{
 	try {
-		// Session session = sessionFactory.getCurrentSession();
+		
 	
 		sessionFactory.getCurrentSession().save(userdetails);
 		return true;
@@ -83,7 +83,7 @@ catch(Exception e)
 @Transactional
 public Userdetails get(String userid)
 {
-	String hql = "from Userdetails where userid= "+" '" +userid+ "'";
+	String hql = "From Userdetails where userid= "+" '" +userid+ "'";
 	Query query =sessionFactory.getCurrentSession().createQuery(hql);
 	@SuppressWarnings("unchecked")
 	List<Userdetails> list = query.list();
@@ -99,8 +99,8 @@ public Userdetails get(String userid)
 
 @Transactional
 public Userdetails authenticate(String userid, String password) {
-	System.out.println("DAO IMPLEMENTATION..");
-	String hql = "from Userdetails where userid= '" + userid + "' and " + " password ='" + password + "'";
+	System.out.println("Userdetails implementation");
+	String hql = "From Userdetails where userid= '" + userid + "' and " + " password ='" + password + "'";
 	Query query = sessionFactory.getCurrentSession().createQuery(hql);
 
 	
@@ -117,7 +117,7 @@ public Userdetails authenticate(String userid, String password) {
 @Transactional
 public List<Userdetails> list()
 {
-	String hql = "from Userdetails";
+	String hql = "From Userdetails";
 	Query query =sessionFactory.getCurrentSession().createQuery(hql);
 	return query.list();
 }
@@ -125,7 +125,7 @@ public List<Userdetails> list()
 @Transactional
 public void setOnLine(String userid)
 {
-	String hql ="update Userdetails SET is_online='Y' where userid= "+" '" +userid+ "'";
+	String hql ="Update Userdetails SET is_online='Y' where userid= "+" '" +userid+ "'";
 	Query query =sessionFactory.getCurrentSession().createQuery(hql);
 	query.executeUpdate();
 }
@@ -133,7 +133,7 @@ public void setOnLine(String userid)
 @Transactional
 public void setOffLine(String userid)
 {
-	String hql ="update Userdetails SET is_online='N' where userid= "+" '" +userid+ "'";
+	String hql ="Update Userdetails SET is_online='N' where userid= "+" '" +userid+ "'";
 	Query query =sessionFactory.getCurrentSession().createQuery(hql);
 	query.executeUpdate();
 	

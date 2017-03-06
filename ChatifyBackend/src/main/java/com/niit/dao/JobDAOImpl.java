@@ -27,7 +27,7 @@ public class JobDAOImpl implements JobDAO {
 	
 	public List<Job> getAllJobs() {
 		Session session=sessionFactory.openSession();
-		Query query=session.createQuery("from Job");
+		Query query=session.createQuery("From Job");
 		List<Job> jobs=query.list();
 		session.close();
 		return jobs;

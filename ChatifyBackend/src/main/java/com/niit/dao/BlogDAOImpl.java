@@ -28,7 +28,7 @@ public class BlogDAOImpl implements BlogDAO {
 	public boolean save(Blog blog)
 	{
 	try {
-		// Session session = sessionFactory.getCurrentSession();
+		
 	
 		sessionFactory.getCurrentSession().save(blog);
 		return true;
@@ -81,7 +81,7 @@ catch(Exception e)
 @Transactional
 public Blog get(String id)
 {
-	String hql = "from Blog where id= "+" '" +id+ "'";
+	String hql = "From blog where id= "+" '" +id+ "'";
 	Query query =sessionFactory.getCurrentSession().createQuery(hql);
 	@SuppressWarnings("unchecked")
 	List<Blog> list = query.list();
@@ -101,7 +101,7 @@ public Blog get(String id)
 @Transactional
 public List<Blog> list()
 {
-	String hql = "from Blog";
+	String hql = "From Blog";
 	Query query =sessionFactory.getCurrentSession().createQuery(hql);
 	return query.list();
 }

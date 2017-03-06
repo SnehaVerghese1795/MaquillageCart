@@ -1,3 +1,5 @@
+//web.xml - Java based configuration.
+
 package com.niit.configuration;
 
 import javax.servlet.Filter;
@@ -6,13 +8,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-//web.xml - Java based configuration.
+
 
 public class AppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
 	private static final Logger logger = 
 			LoggerFactory.getLogger(AppInitializer.class);
-	@Override
+	@Override //is an overridden method from super class or interface
+
+
 	protected Class[] getRootConfigClasses() {
 		logger.debug("Starting of the method getRootConfigClasses");
 		return new Class[] { AppConfig.class, WebSocketConfig.class };
@@ -33,6 +37,7 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
 	@Override
 	protected Filter[] getServletFilters(){
 		Filter [] singleton = { new CORSFilter() };
-		return singleton;
+		return singleton;  /* if you want Spring to return the same bean instance each time one is needed, 
+		you should declare the bean's scope attribute to be singleton.*/
 	}
 }

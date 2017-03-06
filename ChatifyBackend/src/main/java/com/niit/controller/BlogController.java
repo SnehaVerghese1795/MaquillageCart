@@ -30,7 +30,7 @@ private static final Logger log=LoggerFactory.getLogger(UserController.class);
 	
 	@RequestMapping(value="/blogs", method=RequestMethod.GET)
 	public ResponseEntity<List<Blog>> listAllBlog(){
-		log.debug("-->Calling method listAllUsers");
+		log.debug("Invoking method listAllUsers");
 		List<Blog> blog=blogdao.list();
 		if(blog.isEmpty()){
 			return new ResponseEntity<List<Blog>>(HttpStatus.NO_CONTENT);
@@ -41,7 +41,7 @@ private static final Logger log=LoggerFactory.getLogger(UserController.class);
 	@RequestMapping(value="/blog/{id}",method=RequestMethod.GET)
 	public ResponseEntity<Blog> getuser(@PathVariable("id")String id)
 	{
-	log.debug("-->calling get method");
+	log.debug("Invoking get method");
     Blog blog=blogdao.get(id);
 	if(blog==null)
 	{
@@ -56,7 +56,7 @@ private static final Logger log=LoggerFactory.getLogger(UserController.class);
 	
 	@RequestMapping(value="/createblogs/", method=RequestMethod.POST)
 	public ResponseEntity<Blog> createblogs(@RequestBody Blog blog,HttpSession session){
-		log.debug("--> Calling the method createUsers");
+		log.debug("Invoking the method createUsers");
 		String loggedInUserid = (String) session.getAttribute("loggedInUserId");
 		blog.setUserid(loggedInUserid);
 	    blogdao.save(blog);
@@ -66,18 +66,18 @@ private static final Logger log=LoggerFactory.getLogger(UserController.class);
 	@RequestMapping(value="/blog/{id}",method=RequestMethod.DELETE)
 	public ResponseEntity<Blog> deleteuser(@PathVariable("id")String id)
 	{
-		log.debug("--> calling the delete method");
+		log.debug("Invoking the delete method");
 		Blog blog=blogdao.get(id);
 		if(blog==null)
 		{
-			log.debug("-->User does not exist");
+			log.debug("User does not exist");
 			blog = new Blog();
 			blog.setErrorcode("404");
 			blog.setErrormessage("Blog not found");
 			return new ResponseEntity<Blog>(blog,HttpStatus.NOT_FOUND);
 		}
 		blogdao.delete(id);
-		log.debug("-->User deleted successfully");
+		log.debug("User deleted successfully");
 		return new ResponseEntity<Blog>(blog,HttpStatus.OK);
 		}
 	
