@@ -5,7 +5,7 @@ app.config(function($routeProvider) {
 
   .when('/', {
     templateUrl : 'pages/home.html',
-    controller  : 'HomeController'
+    controller  : 'UserController'
   })
 .when('/chat', {
     templateUrl : 'chat/chat.html',
@@ -41,11 +41,11 @@ app.config(function($routeProvider) {
     controller  : 'UserController'
   })
   .when('/search_friend', {
-    templateUrl : 'pages/search_friend.html',
+    templateUrl : 'friend/search_friend.html',
     controller  : 'FriendController'
   })
   .when('/view_friend', {
-    templateUrl : 'pages/view_friend.html',
+    templateUrl : 'friend/view_friend.html',
     controller  : 'FriendController'
   })
 
@@ -76,4 +76,4 @@ app.run(function ($rootScope, $location, $cookieStore, $http){
 	$http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.currentUser;
 	
 	}
-	});
+	});         

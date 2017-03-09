@@ -4,7 +4,7 @@ app.factory('BlogService', ['$http', '$q','$rootScope', function($http, $q,$root
 	
 	console.log("Blog Service...")
 	
-	var BASE_URL='http://localhost:9080/ChatifyBackend'
+	var BASE_URL='http://localhost:9082/ChatifyBackend'
 		
     return {
          

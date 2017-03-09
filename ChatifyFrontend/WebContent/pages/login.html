@@ -97,7 +97,7 @@ background:none;
                     <form name="form" ng-submit="ctrl.login()" role="myForm"  class="form-horizontal">
                         <legend>Sign In</legend>
                         <div class="form-group" ng-class="{ 'has-error': form.userid.$dirty && form.userid.$error.required }">
-                            <label for="email">E-Mail id</label>
+                            <label for="email">user id</label>
                             <input id="userid" placeholder="userid" type="text" class="form-control" ng-model="ctrl.Userdetails.userid" required  />
                             <span ng-show="form.userid.$dirty && form.userid.$error.required" class="help-block">User Id is required</span>
                         </div>

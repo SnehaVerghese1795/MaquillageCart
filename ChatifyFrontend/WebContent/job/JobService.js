@@ -8,7 +8,7 @@ app.service('JobService', [
 		'$rootScope',
 		function($http, $q, $rootScope) {
 			console.log("Job services")
-			var BASE_URL = 'http://localhost:9080/ChatifyBackend'
+			var BASE_URL = 'http://localhost:9082/ChatifyBackend'
 			return {
 								
 				applyForJob:function(jobId){

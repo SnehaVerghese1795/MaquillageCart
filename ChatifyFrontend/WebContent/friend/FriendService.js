@@ -4,7 +4,7 @@ app.factory('FriendService', ['$http', '$q','$rootScope', function($http, $q,$ro
 	
 	console.log("Friend Service")
 	
-	var BASE_URL='http://localhost:9080/ChatifyBackend'
+	var BASE_URL='http://localhost:9082/ChatifyBackend'
     return {
          
 		getMyFriends: function() {
