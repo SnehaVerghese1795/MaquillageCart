@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>register page</title>
+</head>
+<style>
+/* body { 
+  background: url("http://www.planwallpaper.com/static/images/744081-background-wallpaper.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} */
+
+</style>
+<body>
+
+<body>
+<div data-ng-show='user.errorMessage'>
+			<div class="alert alert-danger fade in">{{user.errorMessage}}</div>
+
+		</div>
+	
+    <div class="panel panel-default">
+				<legend><center >Registration Form </center></legend>
+				
+				<div class="formcontainer">
+					<form data-ng-submit="submit()" name="myForm"
+						class="form-horizontal">
+
+						<label>Register Yourself As..</label>
+						<div class="container">
+							<div class="radio">
+								<label class="radio-inline"> <input type="radio" id="Role"
+									name="role" value="STUDENT" data-ng-model="user.role" >
+									Student
+								</label> <label class="radio-inline"> <input type="radio" id="Role"
+									name="role" value="ALUMINI" data-ng-model="user.role" >
+									Alumni
+								</label> <label class="radio-inline"> <input type="radio" id="Role"
+									name="role" value="EMPLOYEE" data-ng-model="user.role" >
+									Employee
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-lable" for="fname">FristName</label>
+								<div class="col-md-7">
+									<input type="text" data-ng-model="user.fName" id="fname"
+										class="username form-control input-sm"
+										placeholder="John Doe" required ng-minlength="3" />
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-lable" for="lname">LastName</label>
+								<div class="col-md-7">
+									<input type="text" data-ng-model="user.lName" id="lname"
+										class="username form-control input-sm"
+										placeholder="John Doe" required ng-minlength="3" />
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-lable" for="password">Password</label>
+								<div class="col-md-7">
+									<input type="password" data-ng-model="user.password"
+										id="password" class="username form-control input-sm"
+										placeholder="password" pattern=".{6,8}" title="password should contain 6 to 8 characters" 
+										required />
+								</div>
+							</div>
+						</div>
+
+
+						<div class="row">
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-lable" for="email">Email</label>
+								<div class="col-md-7">
+									<input type="email"data-ng-model="user.emailId" id="email"
+										class="email form-control input-sm" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required="true"
+										placeholder="abc@gmai.com"  />
+
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-lable" for="contact">Mobile</label>
+								<div class="col-md-7">
+									<input type="tel" data-ng-model="user.phoneNo" id="contact"
+										class="mobile form-control input-sm"
+										placeholder="mobilenumber" required />
+
+								</div>
+							</div>
+						</div>
+
+
+						<div class="row">
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-lable" for="address">Address</label>
+								<div class="col-md-7">
+									<input type="text" width="100" height="50"
+										data-ng-model="user.address" id="address"
+										class="form-control input-sm"
+										placeholder="address" />
+								</div>
+							</div>
+						</div>
+
+
+
+						<div class="row">
+							<div class="form-actions floatRight">
+								<button type="submit" 
+									class="btn btn-default btn-register-submit btn-block m-t-md">Register</button>
+								<button type="button" ng-click="reset()"
+									class="btn btn-default btn-reset-submit btn-block m-t-md">Reset</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+	
+
+
+</body>
+</html>

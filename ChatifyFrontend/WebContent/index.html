@@ -1,106 +1,92 @@
 <!DOCTYPE html>
-<html ng-app="myApp" ng-controller="UserController as ctrl">
+<html>
 <head>
-  <title>Chatify</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-cookies.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.1/sockjs.js"></script>
-</head>
-<style>
- /* Remove the navbar's default margin-bottom and rounded borders */
-    .navbar {
-      margin-bottom:10;
-      border-radius:40;
-      background: transperant !important;
-     
-    }
-    body
-{
-background-image:url(http://cliparts.co/cliparts/rin/rpp/rinrpp4BT.jpg);
-background-size:150%;
-background-repeat: no-repeat;
+<meta charset="ISO-8859-1">
+<title>Chatify</title>
 
+
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet"
+	href="http://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet'
+	href="https://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="stylesheet" href="c_resource/assets/css/font-awesome.min.css">
+<link
+	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700"
+	rel="stylesheet" type="text/css" />
+<link href="c_resource/assets/css/style.css" rel="stylesheet"
+	type="text/css">
+
+<style>
+body { 
+   background-image:url(http://cliparts.co/cliparts/rin/rpp/rinrpp4BT.jpg);
+   background-repeat: no-repeat;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+    background-size: cover;
+    
+}
+/* Set black background color, white text and some padding */
+footer {
+	 background: transparent !important;}
+}
+
+li {
+	display: inline;
 }
 </style>
-<script>
-    $(document).ready(
-			function() {
-				$(".dropdown").hover(
-						function() {
-							$('.dropdown-menu', this).not('.in .dropdown-menu')
-									.stop(true, true).slideDown("400");
-							$(this).toggleClass('open');
-						},
-						function() {
-							$('.dropdown-menu', this).not('.in .dropdown-menu')
-									.stop(true, true).slideUp("400");
-							$(this).toggleClass('open');
-						});
-			});
-    </script>
-<body>
-<header role="banner">
-  <img id="logo-main"  src="https://www.freelogoservices.com/api/main/ph/zjHl2lgef9cYrQL0JFa7kzbw2vuCrh9JmR7P0Dd9OXdE9g5shnN1i...Bv9ettdV9dsBUGw0pY
-  " width="290" alt="Logo Thing main logo">
-</header>
-<nav class="navbar navbar">
-  <div class="container-fluid">
-    
-    <ul class="nav navbar-nav">
-      <li class="active"><a style="font-family:Palatino Linotype;  color:black;" href="#/">Home</a></li>
-      <li class="dropdown"><a style="font-family:Palatino Linotype;  color:black;" class="dropdown-toggle" data-toggle="dropdown" href="#">Friend<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-         <li><a style="font-family:Palatino Linotype;  color:black;" href="#/view_friend">View Friend</a></li>
-          <li><a style="font-family:Palatino Linotype;  color:black;" href="#/search_friend">Search Friend</a></li>
-        </ul>
-      </li>
-      <li class="dropdown"><a style="font-family:Palatino Linotype;  color:black;" class="dropdown-toggle" data-toggle="dropdown" href="#">Blog<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-         <li><a style="font-family:Palatino Linotype;  color:black;" href="#/list_blog">List Blog</a></li>
-          <li><a style="font-family:Palatino Linotype;  color:black;" href="#/create_blog">Create Blog</a></li>
-          <li><a style="font-family:Palatino Linotype;  color:black;" href="#/view_blog">View Blog</a></li>
-        </ul>
-      </li>
-      <li class="dropdown"><a style="font-family:Palatino Linotype;  color:black;" class="dropdown-toggle" data-toggle="dropdown" href="#">Job<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-         <li><a style="font-family:Palatino Linotype;  color:black;" href="#/post_job">Create Job</a></li>
-          <li><a style="font-family:Palatino Linotype;  color:black;" href="#/search_job">Search Job</a></li>
-        </ul>
-      </li>
-      <li class="dropdown"><a style="font-family:Palatino Linotype;  color:black;" class="dropdown-toggle" data-toggle="dropdown" href="#">Chat<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-         <li><a style="font-family:Palatino Linotype;  color:black;" href="#/chat">Let's Chat</a></li>
-        </ul>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-
-	<li><a  style="font-family:Palatino Linotype;  color:black;" href="#" ng-click="ctrl.logout()"><span class="glyphicon glyphicon-log-in" ></span> Logout</a>         </li>
-	</ul>
-  </div>
-</nav>
- <div ng-view></div>
- 
- 
-  </body>
-<script src="app.js"></script>
-
-<script src="user/Controller_User.js"></script>
-<script src="user/usercontroller.js"></script>
-<script src="user/UserService.js"></script>
-<script src="blog/BlogController.js"></script>
-<script src="blog/BlogService.js"></script>
-<script src="friend/FriendController.js"></script>
-<script src="chat/ChatService.js"></script>
-<script src="job/JobController.js"></script>
-<script src="job/JobService.js"></script>
-<script src="chat/ChatController.js"></script>
-<script src="friend/FriendService.js"></script>
+</head>
+<body data-ng-app="myApp"
+	data-ng-controller="userController">
+	<div data-ng-include src="'c_common/navbar.html'"></div>
+	<hr>
+	<div data-ng-view=""></div>
+	
+	<script type="text/javascript"
+		src="c_resource/assets/js/angular.min.js"></script>
+	<script type="text/javascript"
+		src="c_resource/assets/js/angular-route.min.js"></script>
+	<script type="text/javascript"
+		src="c_resource/assets/js/angular-cookies.min.js"></script>
+	<!-- 	Chat -->
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.1/sockjs.min.js"
+		type="text/javascript"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js"
+		type="text/javascript"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.3/lodash.js"
+		type="text/javascript"></script>
+	<!-- End Chat -->
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="c_user/userController.js"></script>
+	<script type="text/javascript" src="c_user/userService.js"></script>
+	<script type="text/javascript" src="c_blog/blogController.js"></script>
+	<script type="text/javascript" src="c_blog/editController.js"></script>
+	<script type="text/javascript" src="c_blog/blogService.js"></script>
+	<script type="text/javascript" src="c_comment/commentController.js"></script>
+	<script type="text/javascript" src="c_comment/commentService.js"></script>
+	<script type="text/javascript" src="c_job/jobController.js"></script>
+	<script type="text/javascript" src="c_job/jobService.js"></script>
+	<script type="text/javascript" src="c_job/editJobController.js"></script>
+	<script type="text/javascript" src="c_friend/friendController.js"></script>
+	<script type="text/javascript" src="c_friend/friendService.js"></script>
+	<script type="text/javascript" src="c_chat/chatService.js"></script>
+	<script type="text/javascript" src="c_chat/chatController.js"></script>
+	<!-- 	End AngularScript -->
+</body>
 </html>

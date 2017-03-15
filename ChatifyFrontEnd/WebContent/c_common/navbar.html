@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style>
+body { 
+   background-image:url(http://cliparts.co/cliparts/rin/rpp/rinrpp4BT.jpg);
+   background-repeat: no-repeat;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+    background-size: cover;
+    
+}
+.w3-container{
+	font-family: 'Palatino Linotype'!important;
+    font-size:15px;
+}
+.navbar {
+      margin-bottom:10;
+      border-radius:40;
+      background: transperant !important;
+     
+    }
+
+</style>
+<script>
+    $(document).ready(
+			function() {
+				$(".dropdown").hover(
+						function() {
+							$('.dropdown-menu', this).not('.in .dropdown-menu')
+									.stop(true, true).slideDown("400");
+							$(this).toggleClass('open');
+						},
+						function() {
+							$('.dropdown-menu', this).not('.in .dropdown-menu')
+									.stop(true, true).slideUp("400");
+							$(this).toggleClass('open');
+						});
+			});
+    </script>
+    <style>
+    .navbar{
+ background: transparent !important;}
+    </style>
+</head>
+<body>
+<header role="banner">
+  <img id="logo-main"  src="https://www.freelogoservices.com/api/main/ph/zjHl2lgef9cYrQL0JFa7kzbw2vuCrh9JmR7P0Dd9OXdE9g5shnN1i...Bv9ettdV9dsBUGw0pY
+  " width="290" alt="Logo Thing main logo">
+</header>
+	<!--Navbar -->
+	<nav class="navbar navbar">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li class="active"><a style="font-family:Palatino Linotype;  color:black;" href="#/listofBlog">Home</a></li>
+
+					<li class="dropdown" data-ng-show="currentUser"><a style="font-family:Palatino Linotype;  color:black;"
+						class="dropdown-toggle" data-toggle="dropdown" href="">Blogs <span
+							class="caret"></span></a>
+
+						<ul class="dropdown-menu">
+							<li data-ng-show="currentUser.role=='ADMIN' || currentUser.role=='EMPLOYEE'"><a style="font-family:Palatino Linotype;  color:black;"
+								href="#/addNew">Create Blog</a></li>
+							<li><a style="font-family:Palatino Linotype;  color:black;" href="#/listofBlog">View Blog</a></li>
+
+						</ul></li>
+
+					<li class="dropdown" data-ng-show="currentUser"><a style="font-family:Palatino Linotype;  color:black;"
+						class="dropdown-toggle" data-toggle="dropdown" href="">Friends
+							<span class="caret"></span>
+					</a>
+
+						<ul class="dropdown-menu">
+							<li data-ng-show="currentUser"><a style="font-family:Palatino Linotype;  color:black;" href="#/friendList">Friend's List</a></li>
+							<li><a style="font-family:Palatino Linotype;  color:black;" href="#/userList">Search Friend</a></li>
+
+						</ul></li>
+
+					<li class="dropdown" data-ng-show="currentUser"><a style="font-family:Palatino Linotype;  color:black;"
+						class="dropdown-toggle" data-toggle="dropdown" href="">Jobs <span
+							class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a style="font-family:Palatino Linotype;  color:black;" href="#/listOfJobs">Jobs List</a></li>
+							
+							<li
+								data-ng-show="currentUser.role=='ADMIN' || currentUser.role=='EMPLOYEE'"><a style="font-family:Palatino Linotype;  color:black;"
+								href="#/addJob">Post New Job</a>
+						</ul></li>
+					
+					<li data-ng-show="currentUser"><a style="font-family:Palatino Linotype;  color:black;" href="#/chatPage">Let's Chat</a></li>
+
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown" data-ng-show="currentUser"><a style="font-family:Palatino Linotype;  color:black;" href="" 
+						class="dropdown-toggle" data-toggle="dropdown"><span
+							class="glyphicon glyphicon-user"></span>{{currentUser.fName +" "
+							+currentUser.lName}}<span class="caret"></span></a>
+
+						
+					
+					<li data-ng-hide="currentUser"><a style="font-family:Palatino Linotype;  color:black;" href="#/register" ><span
+							class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+					<li data-ng-hide="currentUser"><a style="font-family:Palatino Linotype;  color:black;" href="#/login" ><span
+							class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					<li data-ng-show="currentUser"><a type="button" style="font-family:Palatino Linotype;  color:black;" href="" 
+						data-ng-click="logout()"><span
+							class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+</body>
+</html>

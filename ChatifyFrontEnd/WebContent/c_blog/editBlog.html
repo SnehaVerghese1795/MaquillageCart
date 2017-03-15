@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+<style>
+
+.panel-default{
+background:none;
+}
+.row input[type="text"] {
+  box-shadow:none;
+  border-color:#ddd;
+  border-radius:0;
+  background:none;
+}
+
+</style>
+</head>
+<body>
+  <div class="panel panel-default">
+				<legend><center >Update Blog</center></legend>
+				
+				<div class="formcontainer">
+					<form  name="myForm"
+						class="form-horizontal">
+<div hidden>
+										<label>UserId</label> <input type="text"
+											data-ng-model="blog.blogId">
+									</div>
+						
+						<div class="row">
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-lable" for="title">Title</label>
+								<div class="col-md-7">
+									<input type="text" data-ng-model="blog.title"
+										id="title" class=" form-control input-sm"
+										placeholder="Title" required ng-minlength="3" />
+								</div>
+							</div>
+						</div>
+
+
+						<div class="row">
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-lable" for="description">Description</label>
+								<div class="col-md-7">
+									<textarea data-ng-model="blog.description"
+										placeholder="Description.." class="form-control" required
+										rows="12"></textarea>
+
+								</div>
+							</div>
+						</div>
+
+						
+
+
+						
+
+						<div class="row">
+							<div class="form-actions floatRight">
+								<button type="submit" 
+									class="btn btn-default btn-create-submit btn-block m-t-md" data-ng-click="update()">Update</button>
+								<button type="button" data-ng-click="reset()"
+									class="btn btn-default btn-reset-reset btn-block m-t-md">Reset</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+</html>
